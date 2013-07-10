@@ -34,4 +34,4 @@ TODO: Update me.
 Includes the metasploit::development_setup recipe.
 
 # Authors
-* Erran Carey (<erran_carey@rapid7.com>)
+* Erran Carey (erran_carey@rapid7.com)
