@@ -31,7 +31,7 @@ TODO: Update me.
 
 # Recipes
 ## metasploit::default
-Includes the metasploit::development_setup recipe.
+Creates a Metasploit development environment.
 
 # Authors
 * Erran Carey (erran_carey@rapid7.com)

@@ -17,14 +17,17 @@
 # limitations under the License.
 #
 
+include_recipe 'editor'
+include_recipe 'git'
+
 # Install an array of packages on Ubuntu(Debian)
 case node[:platform_family]
 when 'debian'
   packages = %w[
     build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate
-    libreadline6-dev libcurl4-openssl-dev git-core libssl-dev libyaml-dev openssl
+    libreadline6-dev libcurl4-openssl-dev libssl-dev libyaml-dev openssl
     autoconf libtool ncurses-dev bison curl wget postgresql postgresql-contrib
-    libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev ruby
+    libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
   ]
 
   # TODO: Use chef-rvm cookbook to install Ruby 1.9.3
@@ -33,9 +36,6 @@ when 'mac_os_x'
   # TODO: Don't just install brew and brew install metasploit
   include_recipe 'homebrew'
   brew_tap 'ecarey-r7/formulae'
-
-  # TODO: Use chef-rvm cookbook to install Ruby 1.9.3
-  %w[ruby193 metasploit].map(&method(:package))
 else
   # TODO: Require Chef exceptions and use which ever error relates to this:
    UnsupportedPlatform = Class.new(RuntimeError)
@@ -45,3 +45,11 @@ else
      "recipe[metasploit::default] doesn't support #{node[:platform]}"
    )
 end
+
+node.set[:rvm][:user_installs] = [{
+  :user => node[:current_user],
+  :default_ruby => '1.9.3',
+  :rubies => %w[1.9.3 2.0.0]
+}]
+
+include_recipe 'rvm::user'
