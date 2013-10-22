@@ -14,9 +14,10 @@ add support by editing the case-when `node[:platform]` blocks and adding
 `when 'windows'`.
 
 
-### Installong the Command Line Tools for OS X
+### Mac OS X
+Installing the Xcode Command Line Tools for OS X.
 
-Xcode is a nearly 4GB developer suite Apple offers for free from the Mac App Store. However, for the purposes of getting Berkshelf installed you’ll only need a specific set of command line tools which fortunately take up much less space.  If you don’t mind the 4GB, by all means go for Xcodem from the app store. Otherwise, you’ll have go to connect.apple.com and register an Apple Developer account. Once you’ve registered you can find them at developer.apple.com/xcode by clicking on “View downloads” and finding the appropriate command line tools for your version of OS X.
+See the requirements from [mxcl/homebrew](https://github.com/mxcl/homebrew/wiki/Installation#requirements)
 
 ## Vagrant
 * Vagrant 1.2+
@@ -25,7 +26,6 @@ Xcode is a nearly 4GB developer suite Apple offers for free from the Mac App Sto
 
 
 # Usage
-
 ## Chef
 Just include `recipe[metasploit::default]` in your node's run list.
 
