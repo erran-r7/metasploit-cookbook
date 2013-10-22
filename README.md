@@ -5,13 +5,18 @@ configuring you're metasploit development environment.
 # Requirements
 ## Platform
 The following systems are supported ***and*** tested on:
-* Mac OS X Mountain Lion and above (10.8+) w/ XCode Developer tools.
+* Mac OS X Mountain Lion and above (10.8+) + Command Line Tools.
 * Ubuntu Precise Pangolin and above(12.04+)
 
 A rule of thumb is that if you're running a flavor of linux/unix your system is
 already supported. If you're running Windows, feel free to tweak some recipes to
 add support by editing the case-when `node[:platform]` blocks and adding
 `when 'windows'`.
+
+
+### Installong the Command Line Tools for OS X
+
+Xcode is a nearly 4GB developer suite Apple offers for free from the Mac App Store. However, for the purposes of getting Berkshelf installed you’ll only need a specific set of command line tools which fortunately take up much less space.  If you don’t mind the 4GB, by all means go for Xcodem from the app store. Otherwise, you’ll have go to connect.apple.com and register an Apple Developer account. Once you’ve registered you can find them at developer.apple.com/xcode by clicking on “View downloads” and finding the appropriate command line tools for your version of OS X.
 
 ## Vagrant
 * Vagrant 1.2+
